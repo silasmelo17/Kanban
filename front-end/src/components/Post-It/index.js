@@ -1,20 +1,25 @@
 import React from 'react'
+import { useDragNDrop } from '../../contexts/DragNDrop'
 
 import './style.css'
 
-function PostIt ({ value, setDrag }) {
+
+
+function PostIt ({ value }) {
+  const { setDrag } = useDragNDrop()
   const { title, description, author, dateTime } = value
 
-  function handleDragStart (event) {
-    const { target } = event
+
+
+  const handleDragStart = ({ target }) => {
     setDrag(value)
     target.classList.add( 'dragging' )
   }
 
-  function handleDragEnd (event) {
-    const { target } = event
+  const handleDragEnd =  ({ target }) =>
     target.classList.remove( 'dragging' )
-  }
+
+
 
   return (
     <article 
