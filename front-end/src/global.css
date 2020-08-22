@@ -1,0 +1,28 @@
+
+:root {
+  --todo: #e84f52;
+  --progress: #ffa600;
+  --done: #2ba7b4;
+
+  --post-it-size: 250px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #181a1d;
+}
+
+body, #root {
+  height: 100%;
+}
+
+div.container {
+  display: flex;
+  padding: 80px 40px;
+}

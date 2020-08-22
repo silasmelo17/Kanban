@@ -1,0 +1,26 @@
+
+article.post-it {
+  display: flex;
+  flex-direction: column;
+
+  width: var(--post-it-size);
+  height: var(--post-it-size);
+  background: #ffdb69;
+  
+  color: black;
+  font-size: 16px;
+  letter-spacing: 2px;
+  cursor: pointer;
+
+  margin: 8px;
+  padding: 12px;
+}
+
+article.post-it p:nth-child(1) {
+  font-weight: bold;
+  margin-bottom: auto;
+}
+
+article.dragging {
+  filter: brightness(0.6);
+}
