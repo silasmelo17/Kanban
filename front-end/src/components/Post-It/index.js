@@ -80,10 +80,12 @@ function PostIt ({ value }) {
       onDragStart={handleDragStart} 
       onDragEnd={handleDragEnd}
     >
+
+
       <p>{title}</p>
       <p>{description}</p>
       <p>{author}</p>
-      <p>
+      <p className='datetime'>
         <span>{date}</span>
         <span>{time}</span>
       </p>

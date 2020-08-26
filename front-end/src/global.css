@@ -76,8 +76,13 @@ h1.kanban-title {
 
 
 
-.orange { background: var(--orange) }
-.pink { background: var(--pink) }
-.blue { background: var(--blue) }
-.brown { background: var(--brown) }
-.yellow { background: var(--yellow) }
+.orange { --post-it-color: var(--orange) }
+.pink { --post-it-color: var(--pink) }
+.blue { --post-it-color: var(--blue) }
+.brown { --post-it-color: var(--brown) }
+.yellow { --post-it-color: var(--yellow) }
+
+svg.recort {
+  width: 0;
+  height: 0;
+}
