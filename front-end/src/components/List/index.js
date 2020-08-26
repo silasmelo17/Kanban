@@ -1,12 +1,16 @@
 import React from 'react'
+import { FaPlus } from 'react-icons/fa'
+
+import { useDragNDrop } from '../../contexts/DragNDrop'
+import { useData } from '../../contexts/Data'
 
 import PostIt from '../Post-It'
-import { useDragNDrop } from '../../contexts/DragNDrop'
 
 import './style.css'
 
 function List ({ title }) {
-  const { data, setDrag, updateData } = useDragNDrop()
+  const { data, updateState, setVisible, setEdited } = useData()
+  const { drag, setDrag } = useDragNDrop()
 
 
 
@@ -27,10 +31,15 @@ function List ({ title }) {
 
   const handleDrop = ({ target }) => { 
     if( target.tagName === 'UL') {
-      updateData( title )
+      updateState( drag, title )
       target.classList.remove('drag-enter')
     }
-    setDrag({})
+    setDrag()
+  }
+
+  const handleOnClickAdd = event => {
+    setVisible(true)
+    setEdited({ state: title })
   }
 
 
@@ -47,17 +56,21 @@ function List ({ title }) {
 
 
   return(
-    <section className='list-container'>
-      <h1 className={title}>{title.replace('-', ' ')}</h1>
+    <section className={`list-container ${title}`}>
+      <h1 className='name-list'>
+        <span>{title.replace('-', ' ')}</span>
+        <span>
+          <FaPlus onClick={handleOnClickAdd} />
+        </span>
+      </h1>
+      
       <ul
         onDragOver={preventDefault} 
         onDragEnter={handleDragEnter}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop} 
-      >
-
+      > 
         {getPostIt()}
-
       </ul>
     </section>
   )

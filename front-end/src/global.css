@@ -4,7 +4,14 @@
   --progress: #ffa600;
   --done: #2ba7b4;
 
-  --post-it-size: 250px;
+  --orange: #fa8538;
+  --yellow: #b8d850;
+  --pink: #f1768b;
+  --blue: #5d85b9;
+  --brown: #c59158;
+  
+  --post-it-width: 250px;
+  --post-it-height: 200px;
 }
 
 * {
@@ -14,15 +21,63 @@
   box-sizing: border-box;
 }
 
-body {
-  background: #181a1d;
-}
-
 body, #root {
   height: 100%;
 }
 
-div.container {
-  display: flex;
-  padding: 80px 40px;
+body {
+  background: #181a1d;
+  font: 400 14px Nunito, sans-serif;
 }
+
+input, button, textarea, select {
+  width: 100%;
+  font: 400 14px Nunito, sans-serif;
+  padding: 6px 10px;
+  border-radius: 2px;
+  letter-spacing: 2px;
+  border: 0;
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+div.container {
+  display: inline-flex;
+  padding: 80px 40px;
+  height: 200px;
+}
+
+h1.kanban-title {
+  position: fixed;
+  width: 100%;
+  padding: 8px 16px;
+  background: #24292e;
+  color: white;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+} 
+
+::-webkit-scrollbar-thumb {
+  background: #24292e;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+
+.orange { background: var(--orange) }
+.pink { background: var(--pink) }
+.blue { background: var(--blue) }
+.brown { background: var(--brown) }
+.yellow { background: var(--yellow) }
